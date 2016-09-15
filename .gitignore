@@ -64,3 +64,12 @@ coverage_report/
 include/
 local/
 man/
+
+#Remove .DS_Store of macosx
+.DS_Store
+ee/.DS_Store
+ee/cli/.DS_Store
+ee/cli/controllers/.DS_Store
+ee/cli/ext/.DS_Store
+ee/cli/plugins/.DS_Store
+ee/core/.DS_Store
