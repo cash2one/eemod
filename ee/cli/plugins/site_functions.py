@@ -208,7 +208,7 @@ def setupdatabase(self, data):
               .format(ee_db_username, ee_mysql_grant_host))
     try:
         EEMysql.execute(self,
-                        "create user `{0}`@`{1}` identified by '{2}'"
+                        "create user `{0}`@`%` identified by '{2}'"
                         .format(ee_db_username, ee_mysql_grant_host,
                                 ee_db_password), log=False)
     except StatementExcecutionError as e:
