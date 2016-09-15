@@ -208,7 +208,7 @@ def setupdatabase(self, data):
               .format(ee_db_username, ee_mysql_grant_host))
     try:
         EEMysql.execute(self,
-                        "create user `{0}`@`{1}` identified by '{2}'"
+                        "create user `{0}`@`%` identified by '{2}'"
                         .format(ee_db_username, ee_mysql_grant_host,
                                 ee_db_password), log=False)
     except StatementExcecutionError as e:
@@ -219,7 +219,7 @@ def setupdatabase(self, data):
     Log.debug(self, "Setting up user privileges")
     try:
         EEMysql.execute(self,
-                        "grant all privileges on `{0}`.* to `{1}`@`{2}`"
+                        "grant all privileges on `{0}`.* to `{1}`@`%`"
                         .format(ee_db_name,
                                 ee_db_username, ee_mysql_grant_host))
     except StatementExcecutionError as e:
